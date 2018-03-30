@@ -1,5 +1,4 @@
 FROM openjdk:8
 EXPOSE 8090
-RUN mkdir -p /app/
-ADD out/artifacts/complete_jar/complete.jar /app/spring-boot-commerce.jar
-ENTRYPOINT ["java","-jar","/app/spring-boot-commerce.jar"]
+ADD build/libs/gs-accessing-data-mysql-0.1.0.jar spring-boot-commerce.jar
+ENTRYPOINT ["java","-jar","spring-boot-commerce.jar"]
